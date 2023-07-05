@@ -44,12 +44,12 @@ public class E02StringMethod4 {
 		이용해서 작성하시오.
 		*/	
 		System.out.println("3번 시나리오===================");
-		String c = mNum;
-		if(c.indexOf("-")+1==6) {
-			System.out.println(c + " => 여자");
-		}else {
-			System.out.println(c + " => 남자");
-		}
+//		String c = mNum;
+//		if(c.indexOf("-")+1==6) {
+//			System.out.println(c + " => 여자");
+//		}else {
+//			System.out.println(c + " => 남자");
+//		}
 		
 		/*
 		시나리오] 다음 파일명에서 확장자를 잘라내는 프로그램을
