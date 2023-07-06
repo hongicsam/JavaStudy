@@ -18,8 +18,12 @@ public class PersonConstructor {
 		해당 클래스에 생성자를 정의하지 않으면 아래와 같이 매개변수, 실행부가 없는 생성자가 컴파일러에 의해 자동으로 삽입된다.
 		지금까지 우리가 new 클래스명()과 같이 사용했던 문장이 바로 디폴트 생성자를 호출하여 객체를 생성하는 것이었다.
 	 */
-	//public personConstructor(){}
-	
+//	public PersonConstructor(String name, int age, String addr) {
+//		super();
+//		this.name = name;
+//		this.age = age;
+//		this.addr = addr;
+//	}
 	// 생성자1 : 매개변수가 없는 형태로 정의
 	public PersonConstructor() {
 		// 매개변수가 없으므로 항상 고정된 값으로만 초기화할 수 있다.
