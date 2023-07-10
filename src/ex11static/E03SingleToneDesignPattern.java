@@ -70,7 +70,7 @@ public class E03SingleToneDesignPattern {
 		
 		/*
 		정적메서드이므로 클래스명을 통해 직접 호출할 수 있다.
-		해당 메서드 호출을 통해 싱글톤 인스턴스의 참조값을 얻오올 수 있다.
+		해당 메서드 호출을 통해 싱글톤 인스턴스의 참조값을 얻어올 수 있다.
 		 */
 		// 여기에서 얻어오는 참조값과...
 		SingleTone st2 = SingleTone.getInstance();
