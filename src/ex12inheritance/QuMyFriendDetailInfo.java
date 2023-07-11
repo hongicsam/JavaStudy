@@ -7,8 +7,9 @@ main 함수에서는 MyFriendDetailInfo 클래스를 통해서 객체를 생성�
 class MyFriendInfo {
 	private String name;
 	int age;
-	// MyFriendInfo 생성자 정의
-	MyFriendInfo(String name, int age) {
+  	// 생성자 메서드 정의
+	public MyFriendInfo(String name, int age) {
+		// 자신의 멤버변수를 초기화한다.
 		this.name = name;
 		this.age = age;
 	}
@@ -22,10 +23,11 @@ class MyFriendInfo {
 class MyFriendDetailInfo extends MyFriendInfo {
 	private String addr;
   	private String phone;
-  	// MyFriendDetailInfo 생성자 정의
-	MyFriendDetailInfo(String name, int age, String addr, String phone) {
-		// 부모클래스 MyFriendInfo를 호출
+  	// 생성자 메서드 정의
+	public MyFriendDetailInfo(String name, int age, String addr, String phone) {
+		// 부모클래스의 생성자를 호출한다.
 		super(name, age);
+		// 자신의 멤버변수를 초기화한다.
 		this.addr = addr;
 		this.phone = phone;
 	}
@@ -38,9 +40,9 @@ class MyFriendDetailInfo extends MyFriendInfo {
 }
 public class QuMyFriendDetailInfo {
 	public static void main(String[] args) {
-		MyFriendDetailInfo info = new MyFriendDetailInfo("이순신", 100, "성균관", "010-1000-8888");
-		info.showMyFriendDetailInfo();
 		//이름, 나이, 주소, 전화번호를 인자로 객체를 생성…
+		MyFriendDetailInfo info = new MyFriendDetailInfo("홍길동", 18, "산골짜기", "010-1234-5678");
 		//정보Print
+		info.showMyFriendDetailInfo();
 	}
 }
