@@ -41,7 +41,7 @@ public class E03StaticInheritance {
 		// 자식클래스를 통한 인스턴스 생성
 		AdderFriend adFriend = new AdderFriend();
 		
-		ad.add(1);				// 1+1=2
+		ad.add(1);				// 0+1+1=2
 		adFriend.friendAdd(3);	// 2+3+3=8
 		Adder.val += 5;			// 8+5=13
 		AdderFriend.val +=7;	// 13+7=20
