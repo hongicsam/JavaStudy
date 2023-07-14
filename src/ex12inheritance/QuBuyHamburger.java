@@ -20,15 +20,32 @@ package ex12inheritance;
 class Burger {
 	//멤버변수
 	private String burger;
-	
-	
-	
+	private int price;
+	private String patty;
+	private String source;
+	private String vegetable;
+
 	//인자생성자
-	
+	public Burger(String burger, int price, String patty, String source, String vegetable) {
+		this.burger = burger;
+		this.price = price;
+		this.patty = patty;
+		this.source = source;
+		this.vegetable = vegetable;
+	}
+
 	//getter : price만 필요
+	public int getPrice() {
+		return price;
+	}
 	
 	//햄버거 정보 출력
 	/* 버거명, 가격, 식재료 출력*/
+	public void bugerInfo() {
+		System.out.println(burger);
+		System.out.println("가격 : " + price);
+		System.out.println("식재료 : " + patty + source + vegetable);
+	}
 }
 //햄버거의 기본가격 추상화 
 class HamburgerPrice {
@@ -37,20 +54,27 @@ class HamburgerPrice {
 	Burger burger;
 	final int COKE = 1000;
 	final int POTATO = 1500;
-
+	
 	//인자생성자
-
+	public HamburgerPrice(Burger burger) {
+		this.burger = burger;
+	}
+	
 	//기본가격계산
 	
 	//햄버거와 결제금액 출력
+	
 }
 //세트가격을 추상화(기본가격을 상속)
-class SetPrice extends HamburgerPrice {	
+class SetPrice extends HamburgerPrice {
 	//인자생성자
-
+	public SetPrice(Burger burger) {
+		super(burger);
+	}	
 	//세트가격계산(오버라이딩)
 	
 	//햄버거와 세트결제금액 출력(오버라이딩)	
+	
 }
 
 public class QuBuyHamburger {
