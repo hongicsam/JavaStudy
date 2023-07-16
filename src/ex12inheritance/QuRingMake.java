@@ -65,7 +65,7 @@ public class QuRingMake {
 	public static void main(String[] args) {
 		/*
 		안쪽원의 정보 :
-		반지름 : 3	
+		반지름 : 3
 		[x좌표:1, y좌표1]
 		바깥쪽원의 정보 :
 		반지름 : 9
