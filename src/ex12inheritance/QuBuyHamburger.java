@@ -22,15 +22,15 @@ class Burger {
 	private String burger;
 	private int price;
 	private String patty;
-	private String source;
+	private String sauce;
 	private String vegetable;
 
 	//인자생성자
-	public Burger(String burger, int price, String patty, String source, String vegetable) {
+	public Burger(String burger, int price, String patty, String sauce, String vegetable) {
 		this.burger = burger;
 		this.price = price;
 		this.patty = patty;
-		this.source = source;
+		this.sauce = sauce;
 		this.vegetable = vegetable;
 	}
 
@@ -44,7 +44,7 @@ class Burger {
 	public void bugerInfo() {
 		System.out.println(burger);
 		System.out.println("가격 : " + price);
-		System.out.println("식재료 : " + patty + source + vegetable);
+		System.out.printf("식재료 : %s, %s, %s\n", patty, sauce, vegetable);
 	}
 }
 
@@ -56,21 +56,25 @@ class HamburgerPrice {
 	final int COKE = 1000;
 	final int POTATO = 1500;
 	
-	//인자생성자
+	//인자생성자 : 멤버상수는 이미 초기화되어 있으므로 햄버거 인스턴스만 초기화한다.
 	public HamburgerPrice(Burger burger) {
 		this.burger = burger;
 	}
 	
 	//기본가격계산
 	public int paymentPrice() {
-		int price = burger.getPrice() + COKE + POTATO;
-		return price;
+		/*
+		햄버거 + 콜라 + 프렌치프라이 가격의 합계를 반환한다.
+		햄버거의 price는 private이므로 getter를 통해 얻어와야한다.
+		 */
+		int totalprice = burger.getPrice() + COKE + POTATO;
+		return totalprice;
 	}
 	
 	//햄버거와 결제금액 출력
 	public void  showPrice() {
 		burger.bugerInfo();
-		System.out.println("세트결제금액 : " + paymentPrice());
+		System.out.println("결제금액 : " + paymentPrice());
 		System.out.println("================================");
 	}
 }
@@ -79,10 +83,11 @@ class HamburgerPrice {
 class SetPrice extends HamburgerPrice {
 	//인자생성자
 	public SetPrice(Burger burger) {
+		// 부모클래스에 정의된 인자생성자 호출
 		super(burger);
 	}	
 	
-	//세트가격계산(오버라이딩)
+	//세트가격계산(오버라이딩) : 500원 할인된 가격으로 계산
 	@Override
 	public int paymentPrice() {
 		return super.paymentPrice() - 500;
@@ -91,7 +96,9 @@ class SetPrice extends HamburgerPrice {
 	//햄버거와 세트결제금액 출력(오버라이딩)	
 	@Override
 	public void showPrice() {
-		super.showPrice();
+		burger.bugerInfo();
+		System.out.println("세트결제금액 : " + paymentPrice());
+		System.out.println("================================");
 	}
 }
 
