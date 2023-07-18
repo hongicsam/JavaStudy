@@ -39,6 +39,7 @@ public class E03MathClass extends Object { // extends 역시 생략가능
 		/*
 		round의 경우 가장 가까운 정수쪽으로 올림/버림을 결정한다.
 		따라서 x.5이상이면 올림처리, 미만이면 버림처리를 한다. 3.4xxx라면 버림처리를 하게된다.
+		JDK1.4 이전까지는 -x.5는 올림처리 x.5xxx는 버림처리가 되지만 이후 버전부터는 둘다 버림처리가 된다
 		 */
 		System.out.println("\n### 반올림 ###");
 		System.out.println("Math.round : " + Math.round(3.49999)); // 버림처리
