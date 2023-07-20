@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 class Friend {
-	// 멤버변수 : 이름, 전화번호, 주소 기본정보 3가지를 저장.
 	String name;
 	String phone;
 	String addr;
-	// 생성자 : 멤버변수 초기화
 	public Friend(String name, String phone, String addr) {
 		this.name = name;
 		this.phone = phone;
 		this.addr = addr;
 	}
-	// 멤버변수 전체를 출력하기 위한 멤버메서드
 	public void showAllData() {
 		System.out.println("이름 : " + name);
 		System.out.println("전화번호 : " + phone);
@@ -22,11 +19,8 @@ class Friend {
 	}
 	public void showBasicInfo()	{}
 }
-// 고등학교 친구의 정보를 저장할 클래스
 class HighFriend extends Friend {
-	// 확장한 멤버변수 : 별명
 	String nickname;
-	// 생성자 : 부모의 생성자를 먼저 호출한 후 멤버변수 초기화
 	public HighFriend(String name, String phone, String addr, String nickname) {
 		super(name, phone, addr);
 		this.nickname = nickname;
@@ -44,16 +38,12 @@ class HighFriend extends Friend {
 		System.out.println("전번 : " + phone);
 	}
 }
-// 대학교 친구 정보를 저장하기 위한 클래스
 class UnivFriend extends Friend {
-	// 확장한 멤버변수로 전공과목을 표현
 	String major;
-	// 생성자
 	public UnivFriend(String name, String phone, String addr, String major) {
 		super(name, phone, addr);
 		this.major = major;
 	}
-	// 오버라이딩1,2 역시 HighFriend클래스와 동일한 패턴으로 정의됨
 	@Override
 	public void showAllData() {
 		System.out.println("==대딩친구(전체정보)==");
@@ -81,9 +71,7 @@ public class MyFriendInfoList {
 		System.out.print("메뉴선택>>>");
 	}
 	public static void main(String[] args) {
-		// 사용자 입력을 위한 인스턴스 생성
 		Scanner scan = new Scanner(System.in);
-		// 기능을 담당하는 핸들러 클래스의 인스턴스 생성
 		/*
 		컬렉션은 인스턴스 생성시 크기를 지정할 필요가 없다.
 		데이터의 갯수에 따라 자동으로 증가된다.
