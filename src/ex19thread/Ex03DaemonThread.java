@@ -1,5 +1,4 @@
 package ex19thread;
-///////////////////////////////////////////////뭔가 다름 
 /*
 쓰레드를 구현하지 않은 일반적인 클래스 : 
 	하나의 클래스가 작업을 완료해야 다음 클래스의 작업을 진행할수있다.
@@ -73,13 +72,15 @@ class DaemonThread extends Thread {
 	 */
 	@Override
 	public void run() {
-		// getName() : 쓰레드명을 반환한다.
-		System.out.printf("[쓰레드명 : %s] Jazz가 흘러요~%n", getName());
-		try {
-			sleep(3000);
-			System.out.println("3초마다 자동저장!!");
-		} catch (InterruptedException e) {
-			System.out.println("자동저장시 오류발생 ㅜㅜ");
+		while(true) {
+			// getName() : 쓰레드명을 반환한다.
+			System.out.printf("[쓰레드명 : %s] Jazz가 흘러요~%n", getName());
+			try {
+				sleep(3000);
+				System.out.println("3초마다 자동저장!!");
+			} catch (InterruptedException e) {
+				System.out.println("자동저장시 오류발생 ㅜㅜ");
+			}			
 		}
 	}
 }
