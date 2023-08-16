@@ -8,9 +8,9 @@ public class DBConnect {
 	public static void main(String[] args) {
 		/*
 		JDBC프로그래밍 절차
-		1. 오랔틀용 JDBC 드라이버를 메모리에 로드한다.
+		1. 오라클용 JDBC 드라이버를 메모리에 로드한다.
 		: new를 사용하지 않고 클래스명으로 직접 객체를 생성한 후 메모리에 로드하는 forName()이라는 정적메서드를 사용한다.
-		메모리에 로드된 드라이버가 DriverNanager라는 클래스에 등록한다.
+		메모리에 로드된 드라이버가 DriverManager라는 클래스에 등록한다.
 		
 		2. 오라클 연결을 위해 커넥션URL, 계정아이디, 패스워드를 준비한다.
 		커넥션URL =>
